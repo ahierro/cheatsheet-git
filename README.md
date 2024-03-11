@@ -64,7 +64,7 @@ git config --global difftool.prompt false
 git config --global merge.tool vscode
 ```
 ```bash
-git config --global mergetool.vscode.cmd 'code --wait $MERGED'
+git config --global mergetool.vscode.cmd 'code --wait --merge $REMOTE $LOCAL $BASE $MERGED'
 ```
 ```bash
 git config --global mergetool.prompt false
