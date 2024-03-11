@@ -53,9 +53,6 @@ git config --global --unset core.editor
 git config --global diff.tool vscode
 ```
 ```bash
-git config --global diff.tool 'code --wait --new-window'
-```
-```bash
 git config --global difftool.vscode.cmd 'code --wait --diff $LOCAL $REMOTE'
 ```
 ```bash
@@ -309,15 +306,21 @@ cat .git/refs/heads/main # Find out main sha
 #### Discard unstaged changes of file
 ```bash
 git restore [file]
+git checkout -- [file]
 ```
 
-#### Discard (Discard uncommited changes)
+#### Discard Discard unstaged hunks
 ```bash
-git checkout . # Leaves untracked files and staged changes and discards updates and deletions
-git restore . # Leaves untracked files and staged changes and discards updates and deletions
-git checkout [file] # Discard unstaged changes in file
-git checkout -p # Discard unstaged hunks
+git restore -p [file]
+git checkout -p [file]
 ```
+
+#### Discard (Discard all uncommited changes)
+```bash
+git restore . # Leaves untracked files and staged changes and discards updates and deletions
+git checkout . # Leaves untracked files and staged changes and discards updates and deletions
+```
+
 #### Discard commited changes With revert
  ```bash
 git revert [sha] # Adds a commit with the opposite changes to commit sha
