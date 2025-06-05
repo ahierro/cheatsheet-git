@@ -124,6 +124,11 @@ ssh-add ~/.ssh/id_ed25519
 ssh -T git@github.com
 ```
 
+#### Add ssh key to known hosts
+```bash
+ssh-keyscan git.domain.com >> ~/.ssh/known_hosts
+```
+
 ## Initialize Remote Repo
 #### create a new repository on the command line
 ```bash
