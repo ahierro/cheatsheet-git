@@ -14,6 +14,10 @@ git config --global user.name "ahierro"
 ```bash
 git config --global user.email "alejandrohierro123@gmail.com"
 ```
+#### Auto Setup Remote
+```bash
+git config --global push.autoSetupRemote true
+```
 #### Edit Configs as a file
 ```bash
 git config --global --edit
@@ -210,11 +214,15 @@ git push --delete origin [tagname]
 
 ## REBASE (Don't use it on shared branches)
 - It takes the commits from a given branch and replays them on top of the HEAD of another branch. If you are working on a featureBranch and you want to put all your commits from featureBranch on top of the latest commit of main branch then switch to main and do a 'git pull' to update it with latests changes and then switch back to featureBranch and do:
-
+- 
+#### Basic Rebase
 ```bash
 git rebase [main]
 ```
-
+#### Rebase with new commit date
+```bash 
+git rebase --ignore-date [main]
+```
 #### Abort current rebase process discarding changes
 ```bash
 git rebase --abort
